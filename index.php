@@ -19,8 +19,6 @@ class Index {
     //启动数据库
     protected $mysql;
     protected $index = 0;
-	//小说别名
-	protected $book_name = 'book1';
 	//小说地址
     protected $url = 'https://www.cmxsw.com';
     protected $parm = '/29/29766/';
@@ -31,16 +29,18 @@ class Index {
 		'一秒记住【草莓小说网 www.cmxsw.Com 】，无弹窗，更新快，免费阅读！',
 		'手机用户请浏览 http://m.cmxsw.Com阅读，更优质的阅读体验，书架与电脑版同步。',
 	];
+	//数据库配置
+	protected $db_config = [
+		'host'   => '127.0.0.1',
+		'port'   => '3306',
+		'user'   => 'root',
+		'passwd' => '123456',
+		'dbname' => 'scrapbook',
+	];
 
     public function __construct() {
 		//数据库配置
-        $this->mysql = new MMysql ([
-							'host'   => '127.0.0.1',
-							'port'   => '3306',
-							'user'   => 'root',
-							'passwd' => '123456',
-							'dbname' => 'scrapbook',
-						]);
+        $this->mysql = new MMysql ($this->db_config);
         //清数据库k
         // $this->mysql->doSql('DELETE FROM sb_section');
         $res = $this->mysql->where("book = '".BOOK_NAME."' and title<>'' ")->order('id desc')->limit(1)->select('sb_section');

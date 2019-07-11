@@ -2,8 +2,8 @@
 
 自己搭建好本地PHP运行环境
 
-1. 导入==install.sql==文件创建数据库
-2. 修改==index.php==里面的以下参数
+1. 导入*install.sql*文件创建数据库
+2. 修改*index.php*里面的以下参数
 ```
 //章节的选择器css语法
 define('PRG_sb_section','div.article_texttitleb a');
@@ -30,8 +30,8 @@ protected $db_config = [
 	'dbname' => 'scrapbook',
 ];
 ```
-3.运行==php index.php==即可在当前目录下生成book.txt文件
+3.运行*php index.php*即可在当前目录下生成book.txt文件
 
-注意：如果你命令行下运行不了php说明没有在环境变量里面添加php的执行文件地址,将php.exe文件的地址拷贝到以下位置，然后重新打开cmd即可运行。
+注意：如果你命令行下运行不了php说明没有在环境变量里面添加php的执行文件地址,将php.exe文件的*所在目录*拷贝到以下位置，然后重新打开cmd即可运行。
 
-==在我的电脑-属性-高级系统设置-环境变量-PATH==
+*在我的电脑-属性-高级系统设置-环境变量-PATH*
